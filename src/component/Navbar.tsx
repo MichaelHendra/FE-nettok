@@ -14,14 +14,14 @@ return (
         <nav>
             <Router>
             <ul>
-                <li><Link to="/"><img src={Logo} alt="Logo" className={cssModule.logo}/></Link></li>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/movie">Movies</Link></li>
-                <li><Link to="/new">New</Link></li>
-                <li><Link to='/mylist'>My List</Link></li>
+                <li><Link to="/"><img src={Logo} alt="Logo" className={`${cssModule.LinkNav} ${cssModule.logo}`}/></Link></li>
+                <li><Link to="/" className={cssModule.LinkNav}>Home</Link></li>
+                <li><Link to="/movie" className={cssModule.LinkNav}>Movies</Link></li>
+                <li><Link to="/new" className={cssModule.LinkNav}>New</Link></li>
+                <li><Link to='/mylist' className={cssModule.LinkNav}>My List</Link></li>
                 <li className={cssModule.kanan}><button className={cssModule.btn}>Login</button></li>
-                <li className={cssModule.kanan}><Link to="/"><img src={Bell} alt="bell" className={cssModule.Sd}/></Link></li>
-                <li className={cssModule.kanan}><Link to="/"><img src={Cari} alt="cari" className={cssModule.Sd}/></Link></li>
+                <li className={`${cssModule.kanan} ${cssModule.LinkNav}`}><Link to="/"><img src={Bell} alt="bell" className={cssModule.Sd}/></Link></li>
+                <li className={`${cssModule.kanan} ${cssModule.LinkNav}` }><Link to="/"><img src={Cari} alt="cari" className={cssModule.Sd}/></Link></li>
             </ul>
             <Routes>
                 <Route path="/" element = {<Home />} />
