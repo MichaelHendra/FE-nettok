@@ -9,7 +9,7 @@ function Footer () {
                 <div className={cssModule.containterFooter}>
                     <div className={cssModule.gapFooter}></div>
                     <div><img src={Logo} alt="Logo" className={cssModule.LogoFooter}/></div>
-                    <div><p className={cssModule.para}>Steraming With Higt Qualty</p></div>
+                    <div><p className={cssModule.para}>Steraming With High Quality</p></div>
                 </div>
                 <div className={cssModule.containterFooter}>
                 <div className={cssModule.divlinkFooter}><b className={cssModule.bold}>Menu</b></div>
