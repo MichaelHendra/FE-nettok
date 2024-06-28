@@ -2,6 +2,7 @@ import ReactPlayer from "react-player";
 import cssModul from "./Play.module.css"
 //image
 import Gambar1 from "../assets/gambar1.png"
+import Video1 from "../videos/2022-11-03 08-56-24.mp4"
 
 function Play () {
 return(
@@ -11,7 +12,7 @@ return(
         <div className={cssModul.Video}>
             <ReactPlayer 
              className = {cssModul.player}
-             url ='https://www.youtube.com/watch?v=ZOCG5hAsgPs'
+             url ={Video1}
              width='1024'
              height='720'
              controls
