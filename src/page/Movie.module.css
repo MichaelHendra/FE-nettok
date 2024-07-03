@@ -19,6 +19,13 @@
     padding: 20px;
     color: black;
 }
+.LinkCard{
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+.LinkCard:hover{
+    background-color: #FCE9E9;
+}
 .cardMovie{
     background-color: #fff;
     border-radius: 10px;
@@ -32,15 +39,18 @@
 }
 .cardMovie .info {
     padding: 15px;
+
 }
 .cardMovie .info .title {
     font-size: 16px;
     font-weight: bold;
+
 }
 .cardMovie .info .details {
     margin-top: 5px;
     font-size: 14px;
     color: #777;
+
 }
 .cardMovie .duration {
     position: absolute;

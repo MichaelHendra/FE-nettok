@@ -37,7 +37,7 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/movie" element={<Movies />} />
                 <Route path="/mylist" element={<Mylist />} />
-                <Route path="/play" element={<Play />} />
+                <Route path="/play/:id" element={<Play />} />
             </Routes>
             <Footer />
             <Modal isOpen={isModalOpen} onClose={closeModal} />
