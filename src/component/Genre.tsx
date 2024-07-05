@@ -26,7 +26,7 @@ return (
     <div className={cssModule.BG}>
         <div className={cssModule.linkList}>
             {genres.map((genre, index) => (
-                <Link key={index} className={cssModule.linkGenre} to={`/genre/${genre.id}`}>{genre.jenis}</Link>
+                <Link key={index} className={cssModule.linkGenre} to={`/genre/${genre.jenis_id}`}>{genre.jenis}</Link>
             ))}
         </div>
     </div>

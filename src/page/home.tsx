@@ -8,6 +8,7 @@ import Play from "../assets/play.png"
 import Info from "../assets/info.png"
 import Gambar1 from"../assets/gambar1.png"
 import Gambar2 from "../assets/gambar2.png"
+import Baratcard from "../component/homeCom/Baratcard";
 
 
 function Home () {
@@ -32,48 +33,9 @@ return(
                     </div>
                 </div>
             </div>
-            <div className={cssModule.containter}>
-                <div className={cssModule.BgBawah}>
-                    <div className={cssModule.cardLine}>
-                        <p className={`${cssModule.LineText} ${cssModule.textLineBawah}`}>See Again</p>
-                        <div className={cssModule.card}>
-                            <img src={Gambar1} alt="gambar1" className={cssModule.card}/>
-                            <img src={Gambar2} alt="gambar2" className={cssModule.card}/>
-                            <img src={Gambar2} alt="gambar2" className={cssModule.card}/>
-                            <img src={Gambar2} alt="gambar2" className={cssModule.card}/>
-                            <img src={Gambar2} alt="gambar2" className={cssModule.card}/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className={cssModule.containter}>
-                <div className={cssModule.BgBawah}>
-                    <div className={cssModule.cardLine}>
-                        <p className={`${cssModule.LineText} ${cssModule.textLineBawah}`}>See Again</p>
-                        <div className={cssModule.card}>
-                            <img src={Gambar1} alt="gambar1" className={cssModule.card}/>
-                            <img src={Gambar2} alt="gambar2" className={cssModule.card}/>
-                            <img src={Gambar2} alt="gambar2" className={cssModule.card}/>
-                            <img src={Gambar2} alt="gambar2" className={cssModule.card}/>
-                            <img src={Gambar2} alt="gambar2" className={cssModule.card}/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className={cssModule.containter}>
-                <div className={cssModule.BgBawah}>
-                    <div className={cssModule.cardLine}>
-                        <p className={`${cssModule.LineText} ${cssModule.textLineBawah}`}>See Again</p>
-                        <div className={cssModule.card}>
-                            <img src={Gambar1} alt="gambar1" className={cssModule.card}/>
-                            <img src={Gambar2} alt="gambar2" className={cssModule.card}/>
-                            <img src={Gambar2} alt="gambar2" className={cssModule.card}/>
-                            <img src={Gambar2} alt="gambar2" className={cssModule.card}/>
-                            <img src={Gambar2} alt="gambar2" className={cssModule.card}/>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Baratcard />
+            <Baratcard />
+            <Baratcard />
         </div>
     </div>
 );
