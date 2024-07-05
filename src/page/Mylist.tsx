@@ -1,7 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import cssModule from './Movie.module.css'
 import Gambar from "../assets/gambar1.png"
 function Mylist(){
+    const [movies, setMovie] = useState([]);
+
+    useEffect(() => {
+        const fetchMovie = async () => {
+            try{
+                const response = await fetch(`http://localhost:8000/api/movies`);
+                const result = await response.json();
+                console.log("Fetchaed data:", result);
+                if (response.ok) {
+                    setMovie(result);
+                }else{
+                    console.error("Failed to fetch movie:", response.statusText);
+                }
+            }catch (error){
+                console.error("Error fetching movie:", error);
+            }
+        };
+        fetchMovie();
+    });
     return (
         <div className={cssModule.BG}>
         <div>

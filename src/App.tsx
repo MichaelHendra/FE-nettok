@@ -9,6 +9,9 @@ import Play from "./page/Play";
 import Home from "./page/home";
 import Modal from "./component/Modal";
 import Register from "./component/registerModal";
+import GenreMovie from "./page/GenreMovie";
+
+
 
 const App = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -38,6 +41,7 @@ const App = () => {
                 <Route path="/movie" element={<Movies />} />
                 <Route path="/mylist" element={<Mylist />} />
                 <Route path="/play/:id" element={<Play />} />
+                <Route path="/genre/:id" element={<GenreMovie />} />
             </Routes>
             <Footer />
             <Modal isOpen={isModalOpen} onClose={closeModal} />

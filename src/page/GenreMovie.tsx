@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import cssModule from "./Movie.module.css";
-// Image
-import Gambar from "../assets/gambar1.png";
-import { Link } from "react-router-dom";
-import Genre from "../component/Genre";
-
-function Movies() {
+import { useParams,Link } from "react-router-dom";
+function GenreMovie () {
+    const {id} = useParams();
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
         const fetchMovies = async () => {
             try {
-                const response = await fetch('http://localhost:8000/api/movies'); 
+                const response = await fetch(`http://localhost:8000/api/movie/genre/${id}`); 
                 const data = await response.json();
                 console.log("Fetched data:", data); // Log the fetched data to check its structure
                 if (Array.isArray(data)) {
@@ -33,9 +30,6 @@ function Movies() {
                 <div>
                     <h1 className={cssModule.h1}>Movie</h1>
                 </div>
-                <div className={cssModule.h1}>
-                    <Genre />
-                </div>
                 <div>
                     <div className={cssModule.cardContainer}>
                         {movies.map((movie, index) => (
@@ -56,5 +50,4 @@ function Movies() {
         </div>
     );
 }
-
-export default Movies;
+export default GenreMovie
