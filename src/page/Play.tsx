@@ -3,6 +3,7 @@ import ReactPlayer from "react-player";
 import cssModul from "./Play.module.css"
 import { useParams } from "react-router-dom";
 import Gambar1 from  "../assets/gambar1.png";
+import PlayCom from "../component/playCom/PlayCom";
 
 
 function Play () {
@@ -55,44 +56,7 @@ return(
                     </div>
                 </div>
             </div>
-    <div className={cssModul.playVideo}>
-    <div className={cssModul.more}>
-    <div className={cssModul.cardContainer}>
-        <div className={cssModul.cardMovie}>
-            <img src={Gambar1} alt="Image"/>
-            <div className={cssModul.info}>
-            <div className={cssModul.title}>Kirik</div>
-            <div className={cssModul.details}>Kirik Ireng</div>
-        </div>
-            <div className={cssModul.duration}>1:40:1</div>
-        </div>
-        <div className={cssModul.cardMovie}>
-            <img src={Gambar1} alt="Image"/>
-            <div className={cssModul.info}>
-            <div className={cssModul.title}>Kirik</div>
-            <div className={cssModul.details}>Kirik Ireng</div>
-        </div>
-            <div className={cssModul.duration}>1:40:1</div>
-        </div>
-        <div className={cssModul.cardMovie}>
-            <img src={Gambar1} alt="Image"/>
-            <div className={cssModul.info}>
-            <div className={cssModul.title}>Kirik</div>
-            <div className={cssModul.details}>Kirik Ireng</div>
-        </div>
-            <div className={cssModul.duration}>1:40:1</div>
-        </div>
-        <div className={cssModul.cardMovie}>
-            <img src={Gambar1} alt="Image"/>
-            <div className={cssModul.info}>
-            <div className={cssModul.title}>Kirik</div>
-            <div className={cssModul.details}>Kirik Ireng</div>
-        </div>
-            <div className={cssModul.duration}>1:40:1</div>
-        </div>
-    </div>
-    </div>
-    </div>
+    <PlayCom />
  </div>
 );
 
