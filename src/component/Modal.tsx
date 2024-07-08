@@ -1,20 +1,42 @@
+import { useState } from "react";
 import cssModule from "./Modal.module.css"
+import axios from "axios";
 
 const Modal = ({isOpen, onClose}) =>{
+    const [emailTok, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        try{
+            const response = await axios.post('http://localhost:8000/api/login',{
+                email: emailTok,
+                password: password,
+            });
+            const {token} = response.data;
+            localStorage.setItem('token', token);
+            onClose();
+        }catch{
+            setError('Invalid credentials. Please try again');
+        }
+    };
+
 if (!isOpen) return null;
 return (
     <div className={cssModule.modalOverlay}>
         <div className={cssModule.modal}>
             <button className={cssModule.closeButton} onClick={onClose}>X</button>
             <h2>Login</h2>
-            <form>
+            {error && <p>{error}</p>}
+            <form onSubmit={handleLogin}>
                 <div className={cssModule.formGroup}>
-                    <label htmlFor='username'>Username</label>
-                    <input type='text'  id='username' name='username' placeholder='Username'/>
+                    <label htmlFor='username'>email</label>
+                    <input type='text' id='email' name='email' placeholder='email' value={emailTok} onChange={(e) => setEmail(e.target.value)}/>
                 </div>
                 <div className={cssModule.formGroup}>
                     <label htmlFor='username'>Password</label>
-                    <input type='text'  id='password' name='password'placeholder='Password'/>
+                    <input type='text'  id='password' name='password'placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)}/>
                 </div>
                 <div className={cssModule.formGroup}>   
                     <button type='submit'>Login</button>
