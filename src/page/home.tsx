@@ -33,9 +33,9 @@ return(
                     </div>
                 </div>
             </div>
-            <Baratcard />
-            <Baratcard />
-            <Baratcard />
+            <Baratcard id = {1}/>
+            <Baratcard id = {2}/>
+            <Baratcard id = {3}/>
         </div>
     </div>
 );
