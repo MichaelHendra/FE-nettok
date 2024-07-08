@@ -1,8 +1,7 @@
 import React, {useState,useEffect} from "react";
 import ReactPlayer from "react-player";
 import cssModul from "./Play.module.css"
-import { useParams } from "react-router-dom";
-import Gambar1 from  "../assets/gambar1.png";
+import { Link, useParams } from "react-router-dom";
 import PlayCom from "../component/playCom/PlayCom";
 
 
@@ -46,13 +45,17 @@ return(
                     />
                 </div>
 
-                <div className={cssModul.LinePlay}>
+                <div className={cssModul.LinePlayBG}>
                     <div className={cssModul.LinePlayKiri}>
                         <h3 className={cssModul.Desk}>{movie.judul_movie}</h3>
                         <p className={cssModul.Desk}>{movie.tanggal_rilis}</p>
                     </div>
                     <div className={cssModul.LinePlayKanan}>
-                        <h1>Kanan</h1>
+                        <div className={cssModul.lineLinkBtn}>
+                            <Link className={cssModul.lineLink2} to={`/genre/${movie.jenis_idih}`}>
+                                <h1 className={cssModul.Desk}>{movie.jenis}</h1>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -27,16 +27,37 @@
 .ListPlay{
     padding-right: 4%;
 }
-/* .LinePlay{
-
-} */
+.LinePlayBG{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+    background-color: black;
+    border-radius: 10px;
+}
  .LinePlayKiri{
     float: left;
  }
  .LinePlayKanan{
     float: right;
  }
- .cardContainer{
+
+ .Desk{
+    margin: 0;
+ }
+ .lineLinkBtn{
+    display: block;
+    background-color: #fff;
+    padding: 10px 16px;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s; 
+ }
+ .lineLink2{
+    text-decoration: none;
+    color: black;
+ }
+ /* .cardContainer{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
@@ -77,6 +98,6 @@
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 12px;
-}
+} */
  
  
