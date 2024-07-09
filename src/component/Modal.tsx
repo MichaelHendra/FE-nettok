@@ -14,9 +14,15 @@ const Modal = ({isOpen, onClose}) =>{
                 email: emailTok,
                 password: password,
             });
-            const {token} = response.data;
-            localStorage.setItem('token', token);
-            onClose();
+            if(response.data){
+                localStorage.setItem("token", response.data.token);
+                onClose();
+                window.location.reload();
+            }else{
+                console.error("Login failed: No token received");
+            }
+            // const {token} = response.data.token;
+            // localStorage.setItem('token', token);
         }catch{
             setError('Invalid credentials. Please try again');
         }
