@@ -1,0 +1,25 @@
+.bGUser{
+    position: relative;
+    overflow: hidden;
+    background-color: #141414;
+    color: white;
+}
+.h1User{
+    padding-left: 4%;
+}
+.ContainerUser{
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 35%;
+    padding-right: 35%;
+}
+.CarduserKiri{
+    padding: 4%;
+    
+    float: left;
+}
+.CarduserKanan{
+    padding: 4%;
+    float: right;
+
+}

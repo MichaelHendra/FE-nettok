@@ -21,7 +21,6 @@ function Navbar({ openModal, openModalRegister }) {
   const handleLogout = async () => {
     try{
       const token = localStorage.getItem("token");
-      console.log(token);
       const response = await axios.post('http://localhost:8000/api/logout', {}, {
         headers: {
           'Authorization': `Bearer ${token}`
@@ -30,7 +29,9 @@ function Navbar({ openModal, openModalRegister }) {
 
       if (response.data){
         localStorage.removeItem("token");
+        localStorage.removeItem("userId");
         setLogin(false);
+        window.location.reload();
         console.log("Berhasil Coy");
       }else{
         console.error("Logout failed:", response.data.message);
@@ -50,7 +51,7 @@ function Navbar({ openModal, openModalRegister }) {
             <>
             <li><Link to='/mylist' className={cssModule.LinkNav}>My List</Link></li>
               <li className={cssModule.kanan}>
-                <Link to="/account" className={cssModule.btn}>Account</Link>
+                <Link to="/user" className={cssModule.btn}>Account</Link>
               </li>
               <li className={cssModule.kanan}>
                 <button className={cssModule.btn} onClick={handleLogout}>Logout</button>

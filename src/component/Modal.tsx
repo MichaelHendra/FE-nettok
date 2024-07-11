@@ -1,6 +1,7 @@
 import { useState } from "react";
 import cssModule from "./Modal.module.css"
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Modal = ({isOpen, onClose}) =>{
     const [emailTok, setEmail] = useState('');
@@ -15,7 +16,9 @@ const Modal = ({isOpen, onClose}) =>{
                 password: password,
             });
             if(response.data){
-                localStorage.setItem("token", response.data.token);
+                const result = await response.data;
+                localStorage.setItem('token', result.token);
+                localStorage.setItem('userId', result.user.id); 
                 onClose();
                 window.location.reload();
             }else{

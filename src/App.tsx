@@ -10,6 +10,8 @@ import Home from "./page/home";
 import Modal from "./component/Modal";
 import Register from "./component/registerModal";
 import GenreMovie from "./page/GenreMovie";
+import User from "./page/User";
+import Subcribe from "./page/Subcribe";
 
 
 
@@ -40,8 +42,10 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/movie" element={<Movies />} />
                 <Route path="/mylist" element={<Mylist />} />
-                <Route path="/play/:id" element={<Play />} />
+                <Route path="/play/:id" element={<Play openModal={openModal} />} />
                 <Route path="/genre/:id" element={<GenreMovie />} />
+                <Route path="/user/" element = {<User />} />
+                <Route path="/subcribe" element ={<Subcribe />}/>
             </Routes>
             <Footer />
             <Modal isOpen={isModalOpen} onClose={closeModal} />

@@ -3,9 +3,10 @@ import ReactPlayer from "react-player";
 import cssModul from "./Play.module.css"
 import { Link, useParams } from "react-router-dom";
 import PlayCom from "../component/playCom/PlayCom";
+import {isAuthenticated} from "../utils/auth";
 
 
-function Play () {
+function Play ({openModal}) {
     const { id } = useParams();
     const [movie, setMovie] = useState(null);
 
@@ -29,6 +30,10 @@ function Play () {
 
     if (!movie) {
         return <div>Loading...</div>;
+    }
+
+    if(!isAuthenticated()){
+        return openModal();
     }
 
 return(
