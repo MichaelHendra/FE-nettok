@@ -21,9 +21,11 @@ function Navbar({ openModal, openModalRegister }) {
   const handleLogout = async () => {
     try{
       const token = localStorage.getItem("token");
+      console.log(token);
       const response = await axios.post('http://localhost:8000/api/logout', {}, {
         headers: {
-          'Authorization': `Bearer ${token}`
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
         }
       });
 
