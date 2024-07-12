@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 function User () {
     const userId = localStorage.getItem("userId");
     const token = localStorage.getItem("token");
-    localStorage.getItem("token")
     const [users,setUser] = useState([]);
     useEffect(() => {
         const fetchUser = async () => {
@@ -17,6 +16,7 @@ function User () {
                     },
                 });
                 const data = await response.json();
+                console.log(data);
                 if(Array.isArray(data)){
                     setUser(data);
                 }else{
@@ -46,7 +46,7 @@ return(
                 <p>{user.nama_sub}</p>
                 <p>{user.date_sub}</p>
                 <p>{user.valid_date}</p>
-                <Link className={cssModule.linkUser} to='/user/subcribe/'>Ubah Langganan </Link>
+                <Link className={cssModule.linkUser} to='/subcribe'>Ubah Langganan </Link>
             </div>
         </div>
             ))}
